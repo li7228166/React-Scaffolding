@@ -6,7 +6,18 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         'app': './app/js/index',
-        'vendor': ['react', 'react-dom', 'babel-polyfill']
+        'vendor': [
+            'react',
+            'react-dom',
+            'babel-polyfill',
+            'react-redux',
+            'react-tap-event-plugin',
+            'redux',
+            'react-router',
+            'redux-devtools',
+            'redux-devtools-log-monitor',
+            'redux-devtools-dock-monitor'
+        ]
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -43,6 +54,8 @@ module.exports = {
         ]
     },
     plugins: [
+        //生产环境不需要该插件，暂不清楚如何取消import
+        //new webpack.IgnorePlugin(/redux-devtools|redux-devtools-log-monitor|redux-devtools-dock-monitor/),
         new webpack.DefinePlugin({
             __DEVELOPMENT__: false,
             __DEVTOOLS__: false,

@@ -4,7 +4,7 @@
 import React , { Component } from 'react';
 import { Router, Route, hashHistory } from 'react-router'
 
-class App extends Component {
+export class App extends Component {
     render() {
         return (
             <div>APP</div>
@@ -12,7 +12,7 @@ class App extends Component {
     }
 }
 
-class NoMatch extends Component {
+export class NoMatch extends Component {
     render() {
         return (
             <div>404</div>
@@ -20,15 +20,17 @@ class NoMatch extends Component {
     }
 }
 
-class MyRouter extends Component {
-    render() {
-        return (
-            <Router history={hashHistory}>
-                <Route path="/" component={App}>
-                    <Route path="aa" component={NoMatch}/>
-                </Route>
-            </Router>
-        )
-    }
-}
-export default MyRouter;
+/*
+ class MyRouter extends Component {
+ render() {
+ return (
+ <Router history={hashHistory}>
+ <Route path="/" component={App}>
+ <Route path="*" component={NoMatch}/>
+ </Route>
+ <Route path="/aaa" component={NoMatch}/>
+ </Router>
+ )
+ }
+ }
+ export default MyRouter;*/

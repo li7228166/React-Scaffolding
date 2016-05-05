@@ -1,5 +1,4 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import { devTools, persistState } from 'redux-devtools';
 import middleware from '../middleware';
 import reducer from '../reducers';
 import DevTools from '../containers/DevTools';
