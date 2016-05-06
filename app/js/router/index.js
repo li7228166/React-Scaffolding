@@ -2,35 +2,26 @@
  * Created by lxp on 2016/5/4.
  */
 import React , { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory,IndexRoute,browserHistory,Redirect,IndexRedirect } from 'react-router'
+import App from '../containers/App'
+import Home from '../containers/Home/Home'
+import NoMatch from '../containers/NoMatch/NoMatch'
 
-export class App extends Component {
+const onChange = function (prevState, nextState, replace) {
+    console.log(nextState);
+};
+
+class MyRouter extends Component {
     render() {
         return (
-            <div>APP</div>
+            <Router history={browserHistory}>
+                <Route path="/" component={App} onChange={onChange}>
+                    <IndexRedirect to="/home"/>
+                    <Route path="home" component={Home}/>
+                    <Route path="*" component={NoMatch}/>
+                </Route>
+            </Router>
         )
     }
 }
-
-export class NoMatch extends Component {
-    render() {
-        return (
-            <div>404</div>
-        )
-    }
-}
-
-/*
- class MyRouter extends Component {
- render() {
- return (
- <Router history={hashHistory}>
- <Route path="/" component={App}>
- <Route path="*" component={NoMatch}/>
- </Route>
- <Route path="/aaa" component={NoMatch}/>
- </Router>
- )
- }
- }
- export default MyRouter;*/
+export default MyRouter;

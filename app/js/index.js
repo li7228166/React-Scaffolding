@@ -7,8 +7,9 @@ import injectTapEventPlugin from 'react-tap-event-plugin';//解决TOUCH设备上
 import DevTools from './containers/DevTools';
 import { Provider } from 'react-redux'
 import { store } from './store';
-import MyRouter,{App,NoMatch} from './router';
-import { Router, Route, hashHistory } from 'react-router'
+import MyRouter from './router';
+
+import '../style/test.css'
 
 injectTapEventPlugin();
 if (__DEVELOPMENT__ && __DEVTOOLS__) {
@@ -18,13 +19,9 @@ if (__DEVELOPMENT__ && __DEVTOOLS__) {
     ), 20)
 }
 
+
 render((
     <Provider store={store}>
-        <Router history={hashHistory}>
-            <Route path="/" component={App}>
-                <Route path="aaa" component={App}/>
-            </Route>
-            <Route path="/bbb" component={NoMatch}/>
-        </Router>
+        <MyRouter />
     </Provider>
 ), document.getElementById('app'));

@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux'
-import items from './items'
-import filter from './filter'
+import number from './number'
 
 const rootReducer = combineReducers({
-    items,
-    filter
+    number
 });
 export default rootReducer
