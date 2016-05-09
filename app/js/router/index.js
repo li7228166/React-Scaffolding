@@ -3,9 +3,9 @@
  */
 import React , { Component } from 'react';
 import { Router, Route, hashHistory,IndexRoute,browserHistory,Redirect,IndexRedirect } from 'react-router'
-import App from '../containers/App'
-import Home from '../containers/Home/Home'
-import NoMatch from '../containers/NoMatch/NoMatch'
+import App from '../components/App'
+import Home from '../components/Home/Home'
+import NoMatch from '../components/NoMatch/NoMatch'
 
 const onChange = function (prevState, nextState, replace) {
     console.log(nextState);

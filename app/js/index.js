@@ -4,7 +4,7 @@
 import React , { Component } from 'react';
 import { render } from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';//解决TOUCH设备上300ms延迟
-import DevTools from './containers/DevTools';
+import DevTools from './components/DevTools';
 import { Provider } from 'react-redux'
 import { store } from './store';
 import MyRouter from './router';
@@ -18,7 +18,6 @@ if (__DEVELOPMENT__ && __DEVTOOLS__) {
         window.document.body.appendChild(document.createElement('div'))
     ), 20)
 }
-
 
 render((
     <Provider store={store}>
