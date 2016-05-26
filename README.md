@@ -6,8 +6,6 @@ Quickly perview the project.
 * [Installing Node.js and updating npm](https://docs.npmjs.com/getting-started/installing-node)
 * Install the bower and grunt-cli
 ````
- sudo npm install -g yo grunt-cli bower generator-angular-fullstack
-````
 * Install node modules
 ````
 npm install
