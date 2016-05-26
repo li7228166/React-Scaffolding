@@ -5,16 +5,19 @@ import React , { Component,PropTypes } from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as Actions from '../../actions/number'
+import * as TokenActions from '../../actions/token'
 
 const mapStateToProps = state => {
     return {
-        number: state.number
+        number: state.number,
+        token: state.token
     }
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        actions: bindActionCreators(Actions, dispatch)
+        actions: bindActionCreators(Actions, dispatch),
+        getToken: bindActionCreators(TokenActions.getToken, dispatch)
     }
 };
 
@@ -32,8 +35,7 @@ class Home extends Component {
     }
 
     render() {
-        const {actions,reduce,number}=this.props;
-
+        const {actions,reduce,number,token}=this.props;
         return (
             <div>
                 <h2>Home!</h2>
@@ -43,6 +45,17 @@ class Home extends Component {
                 </div>
                 <a href="javascript:;" onClick={ev=>actions.increase(2)}>点击增加</a>
                 <a href="javascript:;" onClick={ev=>actions.reduce(1)}>点击减少</a>
+                <br/>
+                <br/>
+                <a onClick={ev=>this.props.getToken()}>fetch获得token</a>
+                {
+                    token.access_token ? (
+                        <div>{token.access_token}</div>
+                    ) : (
+                        ''
+                    )
+                }
+
             </div>
         )
     }

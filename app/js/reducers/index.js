@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 import number from './number'
+import token from './token'
 
 const rootReducer = combineReducers({
-    number
+    number,
+    token
 });
-export default rootReducer
+export default rootReducer;
