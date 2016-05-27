@@ -10,7 +10,7 @@ class NoMatch extends Component {
     };
 
     clickHandler() {
-        this.context.router.replace('home');
+        this.context.router.replace('/home');
     }
 
     componentDidMount() {
