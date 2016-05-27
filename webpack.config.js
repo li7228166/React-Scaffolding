@@ -69,7 +69,7 @@ module.exports = {
             title: 'Redux React Router Async Example',
             filename: 'index.html',
             template: 'index.template.html',
-            favicon: path.join(__dirname, 'app', 'assets', 'favicon.ico')
+            favicon: path.join(__dirname, 'app', 'assets', 'images', 'favicon.ico')
         })
     ]
 };
