@@ -19,7 +19,7 @@ $ git clone https://github.com/li7228166/React-Scaffolding.git
 $ cd React-Scaffolding
 $ npm install
 ```
-### 2 开发模式
+## 2 开发模式
 ```
 $ npm start
 $ npm run start:tool
@@ -27,7 +27,7 @@ $ npm run start:tool
 
 查看效果` http://localhost:3001/`
 
-### 3 生产模式
+## 3 生产模式
 ```
 $ npm run deploy
 ```
